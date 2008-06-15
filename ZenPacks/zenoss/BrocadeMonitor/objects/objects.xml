@@ -3,7 +3,7 @@
 <!-- ('', 'zport', 'dmd', 'Devices', 'Storage', 'Brocade') -->
 <object id='/zport/dmd/Devices/Storage/Brocade' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
 <property visible="True" type="string" id="zPythonClass" >
-Products.BrocadeMonitor.BrocadeDevice
+ZenPacks.zenoss.BrocadeMonitor.BrocadeDevice
 </property>
 <property visible="True" type="lines" id="zCollectorPlugins" >
 ['zenoss.snmp.DeviceMap', 'BrocadeDeviceMap', 'zenoss.snmp.InterfaceMap', 'zenoss.snmp.RouteMap', 'BrocadeFCPorts']
