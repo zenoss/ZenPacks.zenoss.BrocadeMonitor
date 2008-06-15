@@ -1,0 +1,78 @@
+<tal:block metal:use-macro="here/templates/macros/page2">
+<tal:block metal:fill-slot="contentPane">
+
+<form method="post" name="fcportsForm">
+
+<tal:block metal:define-macro="fcportsList"
+    tal:define="tableName string:fcportsList;
+    objects here/fcports/objectValuesAll;
+    tabletitle string:Fibre Channel Ports;
+    batch python:here.ZenTableManager.getBatch(tableName,objects);
+    ts python:here.ZenTableManager.getTableState(tableName);
+    menu_id string:FCPort;
+    showfilterbox python:True;">
+<input type='hidden' name='tableName'
+    tal:attributes="value tableName" />
+<tal:block metal:use-macro="here/zenuimacros/macros/zentable">
+<tal:block metal:fill-slot="filterslot">
+    <div style="position:absolute;right:200px;top:0px;">
+			Monitored
+			<input class="navcontrol" type="checkbox"
+				name="onlyMonitored"
+				onchange="this.form.submit()"
+				value="1"
+                style="margin-top:-2px;margin-bottom:2px;"
+				tal:attributes="checked ts/onlyMonitored" />
+</div>
+    <tal:block metal:use-macro="here/zenuimacros/macros/filterbox"/>
+</tal:block>
+
+<tal:block metal:fill-slot="zentablecontents">
+
+<!-- BEGIN TABLE CONTENTS -->
+    <tr tal:condition="objects">
+        <th class="tableheader" width="20"></th>
+        <th tal:replace="structure python:here.ZenTableManager.getTableHeader(
+                            tableName,'name','Name')">Name
+        </th>
+        <th tal:replace="structure python:here.ZenTableManager.getTableHeader(
+                            tableName,'operStatus','Status')">Status
+        </th>
+    </tr>
+    <tr tal:condition="not:objects">
+        <th class="tableheader" align="left" colspan="5">
+            No fibre channel ports found
+        </th>
+    </tr>
+    <tal:block tal:repeat="fp batch">
+    <tr tal:define="odd repeat/fp/odd"
+        tal:attributes="class python:test(odd, 'odd', 'even')">
+        
+      <td class="tablevalues" align="center">
+           <input type="checkbox" name="componentNames:list" 
+                  tal:attributes="value fp/getRelationshipManagerId"/>
+      </td>
+      <td class="tablevalues">
+          <a class="tablevales" tal:content="fp/name"
+              tal:attributes="href fp/getPrimaryUrlPath"/>
+      </td>
+      <td class="tablevalues" tal:content="
+          python:fp.adminStatusString() + ' / ' + fp.operStatusString()"/>
+    </tr>
+    </tal:block>
+    <tr>
+        <td colspan="3" class="tableheader" align='center'>
+            <form metal:use-macro="here/zenTableNavigation/macros/navtoolnoform"></form>
+        </td>
+    </tr>
+
+<!-- END TABLE CONTENTS -->
+
+</tal:block>
+</tal:block>
+</tal:block>
+
+</form>
+
+</tal:block>
+</tal:block>
