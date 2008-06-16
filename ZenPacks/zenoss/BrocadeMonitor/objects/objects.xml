@@ -633,7 +633,7 @@ False
 <tomanycont id='datapoints'>
 <object id='sigLosses' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
-GAUGE
+COUNTER
 </property>
 <property type="boolean" id="isrow" mode="w" >
 True
