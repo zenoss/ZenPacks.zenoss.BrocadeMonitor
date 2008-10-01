@@ -13,6 +13,9 @@ ZenPacks.zenoss.BrocadeMonitor.BrocadeDevice
 <property type="text" id="description" mode="w" >
 Brocade fibre channel port values
 </property>
+<property type="string" id="targetPythonClass" mode="w" >
+ZenPacks.zenoss.BrocadeMonitor.FCPort
+</property>
 <tomanycont id='datasources'>
 <object id='adminStatus' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
 <property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
