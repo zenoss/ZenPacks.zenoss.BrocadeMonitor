@@ -3,7 +3,7 @@
 # or saved.  Do not modify them directly here.
 # NB: PACKAGES is deprecated
 NAME = 'ZenPacks.zenoss.BrocadeMonitor'
-VERSION = '2.0.0'
+VERSION = '2.0.1'
 AUTHOR = 'Zenoss'
 LICENSE = ''
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.zenoss']
@@ -48,11 +48,7 @@ setup(
     
     # Tell setuptools what non-python files should also be included
     # with the binary egg.
-    package_data = { 
-         '': ['*.txt'],
-         NAME: ['objects/*','skins/*/*','services/*', 'reports/*/*',
-                'modeler/*/*', 'daemons/*', 'lib/*', 'libexec/*'],
-         },  
+    #package_data = {}
 
     # Indicate dependencies on other python modules or ZenPacks.  This line
     # is modified by zenoss when the ZenPack edit page is submitted.  Zenoss
