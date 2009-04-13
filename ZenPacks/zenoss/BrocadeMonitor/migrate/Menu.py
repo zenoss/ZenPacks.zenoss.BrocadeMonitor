@@ -14,6 +14,7 @@ class Menu:
     def migrate(self, pack):
         dmd = pack.__primary_parent__.__primary_parent__
         id = 'brocadeDeviceDetail'
+        # check to see if the menu exisits before trying to delete it
         menu = dmd.zenMenus.More._getOb(id, None)
         if menu is not None:
             dmd.zenMenus.More.manage_deleteZenMenuItem((id,))
