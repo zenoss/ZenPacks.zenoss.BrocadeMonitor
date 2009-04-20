@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
 <objects>
-<!-- ('', 'zport', 'dmd', 'Devices', 'Storage', 'Brocade') -->
-<object id='/zport/dmd/Devices/Storage/Brocade' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
+<!-- ('', 'zport', 'dmd', 'Devices', 'Storage' -->
+<object id='/zport/dmd/Devices/Storage' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
+<object id='Brocade' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
+<property type="lines" id="devtypes" mode="w" >
+[('Brocade Switch', 'SNMP')]
+</property>
 <property visible="True" type="string" id="zPythonClass" >
 ZenPacks.zenoss.BrocadeMonitor.BrocadeDevice
 </property>
@@ -1331,6 +1335,7 @@ AVERAGE
 </tomanycont>
 </object>
 </tomanycont>
+</object>
 </object>
 <!-- ('', 'zport', 'dmd', 'Mibs', 'Brocade') -->
 <object id='/zport/dmd/Mibs/Brocade' module='Products.ZenModel.MibOrganizer' class='MibOrganizer'>
