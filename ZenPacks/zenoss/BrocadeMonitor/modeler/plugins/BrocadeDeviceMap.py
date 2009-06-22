@@ -13,6 +13,7 @@ $ID: $"""
 __version__ = '$Revision: $'[11:-2]
 
 from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, GetMap
+from Products.DataCollector.plugins.DataMaps import MultiArgs
 
 class BrocadeDeviceMap(SnmpPlugin):
 
@@ -30,7 +31,7 @@ class BrocadeDeviceMap(SnmpPlugin):
             return None
             
         om = self.objectMap()
-        om.setHWProductKey = 'Brocade SAN Switch'
-        om.setOSProductKey = 'Brocade Fabric OS ' + \
-            getdata['firmwareVersion']
+        om.setHWProductKey = MultiArgs('SAN Switch', 'Brocade')
+        om.setOSProductKey = MultiArgs(
+            'Fabric OS %s' % getdata['firmwareVersion'], 'Brocade')
         return om
