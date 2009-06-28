@@ -9,7 +9,7 @@ from Products.ZenModel.migrate.Migrate import Version
 from Products.ZenModel.ZenPack import ZenPack
 
 class Menu:
-    version = Version(2, 0, 2)
+    version = Version(2, 0, 3)
 
     def migrate(self, pack):
         dmd = pack.__primary_parent__.__primary_parent__
