@@ -8,9 +8,7 @@ __doc__="""BrocadeFCPorts
 
 BrocadeFCPorts maps fibre channel ports on Brocade switches
 
-$Id: $"""
-
-__version__ = '$Revision: $'[11:-2]
+"""
 
 import re
 
