@@ -18,8 +18,6 @@ from Products.ZenModel.ZenPack import ZenPack as Base
 class ZenPack(Base):
     def install(self, app):
         Base.install(self, app)
-        self.migrate()
 
     def upgrade(self, app):
         Base.upgrade(self, app)
-        self.migrate()

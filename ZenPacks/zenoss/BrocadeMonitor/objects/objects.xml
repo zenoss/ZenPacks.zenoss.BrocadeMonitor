@@ -1,5 +1,20 @@
 <?xml version="1.0"?>
 <objects>
+<!-- ('', 'zport', 'dmd', 'zenMenus', 'More', 'zenMenuItems', 'brocadeDeviceDetail') -->
+<object id='/zport/dmd/zenMenus/More/zenMenuItems/brocadeDeviceDetail' module='Products.ZenModel.ZenMenuItem' class='ZenMenuItem'>
+<property type="text" id="description" mode="w" >
+Brocade Details
+</property>
+<property type="text" id="action" mode="w" >
+brocadeDeviceDetail
+</property>
+<property type="lines" id="allowed_classes" mode="w" >
+('BrocadeDevice',)
+</property>
+<property type="float" id="ordering" mode="w" >
+5.0
+</property>
+</object>
 <!-- ('', 'zport', 'dmd', 'Devices', 'Storage' -->
 <object id='/zport/dmd/Devices/Storage' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
 <object id='Brocade' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
