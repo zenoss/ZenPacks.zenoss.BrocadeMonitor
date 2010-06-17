@@ -3,7 +3,7 @@
 <!-- ('', 'zport', 'dmd', 'zenMenus', 'More', 'zenMenuItems', 'brocadeDeviceDetail') -->
 <object id='/zport/dmd/zenMenus/More/zenMenuItems/brocadeDeviceDetail' module='Products.ZenModel.ZenMenuItem' class='ZenMenuItem'>
 <property type="text" id="description" mode="w" >
-Brocade Details
+Port Details
 </property>
 <property type="text" id="action" mode="w" >
 brocadeDeviceDetail
@@ -16,8 +16,7 @@ brocadeDeviceDetail
 </property>
 </object>
 <!-- ('', 'zport', 'dmd', 'Devices', 'Storage' -->
-<object id='/zport/dmd/Devices/Storage' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
-<object id='Brocade' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
+<object id='/zport/dmd/Devices/Storage/Brocade' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
 <property type="lines" id="devtypes" mode="w" >
 [('Brocade Switch', 'SNMP')]
 </property>
@@ -1350,7 +1349,6 @@ AVERAGE
 </tomanycont>
 </object>
 </tomanycont>
-</object>
 </object>
 <!-- ('', 'zport', 'dmd', 'Mibs', 'Brocade') -->
 <object id='/zport/dmd/Mibs/Brocade' module='Products.ZenModel.MibOrganizer' class='MibOrganizer'>

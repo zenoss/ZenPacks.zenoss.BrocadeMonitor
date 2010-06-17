@@ -3,13 +3,13 @@
 # or saved.  Do not modify them directly here.
 # NB: PACKAGES is deprecated
 NAME = 'ZenPacks.zenoss.BrocadeMonitor'
-VERSION = '2.0.4'
+VERSION = '2.0.5'
 AUTHOR = 'Zenoss'
 LICENSE = ''
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.zenoss']
 PACKAGES = ['ZenPacks', 'ZenPacks.zenoss', 'ZenPacks.zenoss.BrocadeMonitor']
-INSTALL_REQUIRES = []
-COMPAT_ZENOSS_VERS = '>= 2.4'
+INSTALL_REQUIRES = ['ZenPacks.zenoss.StorageBase >= 1.0']
+COMPAT_ZENOSS_VERS = '>= 3.0'
 PREV_ZENPACK_NAME = 'BrocadeMonitor'
 # STOP_REPLACEMENTS
 ################################
