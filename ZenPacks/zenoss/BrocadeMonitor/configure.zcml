@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           >
+
+  <adapter factory=".info.FcPortInfo"
+           for=".FCPort.FCPort"
+           provides="ZenPacks.zenoss.StorageBase.interfaces.IFcPortInfo"
+           />
+
+</configure>

@@ -8,9 +8,7 @@ __doc__="""FCPort
 
 FCPort is a fibre channel port on a Brocade fibre channel switch
 
-$Id: $"""
-
-__version__ = "$Revision: $"[11:-2]
+"""
 
 import locale
 
@@ -29,14 +27,17 @@ from Products.ZenUtils.Utils import prepId
 class FCPort(DeviceComponent, ManagedEntity):
     """Fibre Channel Port"""
 
-    portal_type = meta_type = 'FCPort'
+    portal_type = meta_type = 'FcPort'
     
     module = ""
     port = ""
+    gbicType = 0
+
 
     _properties = (
         {'id':'module', 'type':'string', 'mode':''},
         {'id':'port', 'type':'string', 'mode':''},
+        {'id':'gbicType', 'type':'int', 'mode':''},
         )
 
     _relations = (
@@ -56,6 +57,12 @@ class FCPort(DeviceComponent, ManagedEntity):
             'immediate_view' : 'viewFCPort',
             'actions'        :
             ( 
+                { 'id'            : 'perfServer'
+                , 'name'          : 'Graphs'
+                , 'action'        : 'viewDevicePerformance'
+                , 'permissions'   : (ZEN_VIEW, )
+                },
+
                 { 'id'            : 'status'
                 , 'name'          : 'Status'
                 , 'action'        : 'viewFCPort'
@@ -90,7 +97,11 @@ class FCPort(DeviceComponent, ManagedEntity):
 
 
     def adminStatus(self, default=None):
-        return self.cacheRRDValue('adminStatus', default)
+        value = self.cacheRRDValue('adminStatus', default)
+        if value is None:
+            value = 0
+        return value
+
         
 
     adminStatusMap = ("unknown", "online", "testing")
@@ -100,8 +111,10 @@ class FCPort(DeviceComponent, ManagedEntity):
         
 
     def operStatus(self, default=None):
-        return self.cacheRRDValue('operStatus', default)
-
+        value = self.cacheRRDValue('operStatus', default)
+        if value is None:
+            value = 0
+        return value
 
     operStatusMap = ("unknown", "online", "offline", "testing", "linkFailure")
     def operStatusString(self):
@@ -152,6 +165,5 @@ class FCPort(DeviceComponent, ManagedEntity):
             'c3OutOctets_c3OutOctets',
             'c3Discards_c3Discards',
             ]
-
 
 InitializeClass(FCPort)

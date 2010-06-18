@@ -1,22 +1,10 @@
 <?xml version="1.0"?>
 <objects>
-<!-- ('', 'zport', 'dmd', 'zenMenus', 'More', 'zenMenuItems', 'brocadeDeviceDetail') -->
-<object id='/zport/dmd/zenMenus/More/zenMenuItems/brocadeDeviceDetail' module='Products.ZenModel.ZenMenuItem' class='ZenMenuItem'>
-<property type="text" id="description" mode="w" >
-Port Details
-</property>
-<property type="text" id="action" mode="w" >
-brocadeDeviceDetail
-</property>
-<property type="lines" id="allowed_classes" mode="w" >
-('BrocadeDevice',)
-</property>
-<property type="float" id="ordering" mode="w" >
-5.0
-</property>
-</object>
-<!-- ('', 'zport', 'dmd', 'Devices', 'Storage' -->
+<!-- ('', 'zport', 'dmd', 'Devices', 'Storage', 'Brocade') -->
 <object id='/zport/dmd/Devices/Storage/Brocade' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
+<property visible="True" type="string" id="zIcon" >
+scsi.png
+</property>
 <property type="lines" id="devtypes" mode="w" >
 [('Brocade Switch', 'SNMP')]
 </property>
@@ -27,7 +15,10 @@ ZenPacks.zenoss.BrocadeMonitor.BrocadeDevice
 ['zenoss.snmp.DeviceMap', 'BrocadeDeviceMap', 'zenoss.snmp.InterfaceMap', 'zenoss.snmp.RouteMap', 'BrocadeFCPorts']
 </property>
 <tomanycont id='rrdTemplates'>
-<object id='FCPort' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<object id='FcPort' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property id='zendoc' type='string'>
+Brocade fibre channel port values
+</property>
 <property type="text" id="description" mode="w" >
 Brocade fibre channel port values
 </property>
@@ -56,6 +47,9 @@ True
 </property>
 <property type="boolean" id="usessh" mode="w" >
 False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='adminStatus' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
@@ -90,6 +84,9 @@ True
 <property type="boolean" id="usessh" mode="w" >
 False
 </property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
 <tomanycont id='datapoints'>
 <object id='c1Discards' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -122,6 +119,9 @@ True
 </property>
 <property type="boolean" id="usessh" mode="w" >
 False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c1InFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
@@ -156,6 +156,9 @@ True
 <property type="boolean" id="usessh" mode="w" >
 False
 </property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
 <tomanycont id='datapoints'>
 <object id='c1InOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -188,6 +191,9 @@ True
 </property>
 <property type="boolean" id="usessh" mode="w" >
 False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c1OutFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
@@ -222,6 +228,9 @@ True
 <property type="boolean" id="usessh" mode="w" >
 False
 </property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
 <tomanycont id='datapoints'>
 <object id='c1OutOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -254,6 +263,9 @@ True
 </property>
 <property type="boolean" id="usessh" mode="w" >
 False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c2Discards' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
@@ -288,6 +300,9 @@ True
 <property type="boolean" id="usessh" mode="w" >
 False
 </property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
 <tomanycont id='datapoints'>
 <object id='c2InFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -320,6 +335,9 @@ True
 </property>
 <property type="boolean" id="usessh" mode="w" >
 False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c2InOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
@@ -354,6 +372,9 @@ True
 <property type="boolean" id="usessh" mode="w" >
 False
 </property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
 <tomanycont id='datapoints'>
 <object id='c2OutFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -386,6 +407,9 @@ True
 </property>
 <property type="boolean" id="usessh" mode="w" >
 False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c2OutOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
@@ -420,6 +444,9 @@ True
 <property type="boolean" id="usessh" mode="w" >
 False
 </property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
 <tomanycont id='datapoints'>
 <object id='c3Discards' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -452,6 +479,9 @@ True
 </property>
 <property type="boolean" id="usessh" mode="w" >
 False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c3InFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
@@ -486,6 +516,9 @@ True
 <property type="boolean" id="usessh" mode="w" >
 False
 </property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
 <tomanycont id='datapoints'>
 <object id='c3InOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -518,6 +551,9 @@ True
 </property>
 <property type="boolean" id="usessh" mode="w" >
 False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c3OutFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
@@ -552,6 +588,9 @@ True
 <property type="boolean" id="usessh" mode="w" >
 False
 </property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
 <tomanycont id='datapoints'>
 <object id='c3OutOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -584,6 +623,9 @@ True
 </property>
 <property type="boolean" id="usessh" mode="w" >
 False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='linkFailures' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
@@ -618,6 +660,9 @@ True
 <property type="boolean" id="usessh" mode="w" >
 False
 </property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
 <tomanycont id='datapoints'>
 <object id='operStatus' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -651,6 +696,9 @@ True
 <property type="boolean" id="usessh" mode="w" >
 False
 </property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
 <tomanycont id='datapoints'>
 <object id='sigLosses' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
@@ -683,6 +731,9 @@ True
 </property>
 <property type="boolean" id="usessh" mode="w" >
 False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='syncLosses' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
@@ -1353,12 +1404,108 @@ AVERAGE
 <!-- ('', 'zport', 'dmd', 'Mibs', 'Brocade') -->
 <object id='/zport/dmd/Mibs/Brocade' module='Products.ZenModel.MibOrganizer' class='MibOrganizer'>
 <tomanycont id='mibs'>
-<object id='SW-MIB' module='Products.ZenModel.MibModule' class='MibModule'>
+<object id='Brocade-REG-MIB' module='Products.ZenModel.MibModule' class='MibModule'>
 <property type="string" id="language" mode="w" >
 SMIv1
 </property>
 <tomanycont id='nodes'>
-<object id='bcsi' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='bcsiModules' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+Brocade-REG-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.3.1
+</property>
+</object>
+<object id='bcsiReg' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+Brocade-REG-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.3
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Brocade-TC' module='Products.ZenModel.MibModule' class='MibModule'>
+<property id='zendoc' type='string'>
+The MIB module	contains all shared textual conventions
+for Brocade specific MIBs.
+Copyright (c) 1996-2002 Brocade Communications Systems, Inc.
+		 All rights reserved.
+</property>
+<property type="string" id="language" mode="w" >
+SMIv2
+</property>
+<property type="string" id="contact" mode="w" >
+Customer Support Group
+Brocade Communications Systems,
+1745 Technology Drive,
+San Jose, CA 95110 U.S.A
+Tel: +1-408-392-6061
+Fax: +1-408-392-6656
+Email: support@Brocade.COM
+WEB: www.brocade.com
+</property>
+<property type="string" id="description" mode="w" >
+The MIB module	contains all shared textual conventions
+for Brocade specific MIBs.
+Copyright (c) 1996-2002 Brocade Communications Systems, Inc.
+		 All rights reserved.
+</property>
+<tomanycont id='nodes'>
+<object id='bcsiModuleTC' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+Brocade-TC
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.3.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='SW-MIB' module='Products.ZenModel.MibModule' class='MibModule'>
+<property id='zendoc' type='string'>
+The MIB module	is for Brocade's Fibre Channel Switch.
+Copyright (c) 1996-2003 Brocade Communications Systems, Inc.
+		 All rights reserved.
+</property>
+<property type="string" id="language" mode="w" >
+SMIv2
+</property>
+<property type="string" id="contact" mode="w" >
+Customer Support Group
+Brocade Communications Systems,
+1745 Technology Drive,
+San Jose, CA 95110 U.S.A
+Tel: +1-408-392-6061
+Fax: +1-408-392-6656
+Email: support@Brocade.COM
+WEB: www.brocade.com
+</property>
+<property type="string" id="description" mode="w" >
+The MIB module	is for Brocade's Fibre Channel Switch.
+Copyright (c) 1996-2003 Brocade Communications Systems, Inc.
+		 All rights reserved.
+</property>
+<tomanycont id='nodes'>
+<object id='sw20x0' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The OID for Brocade's Silkworm 20x0 series
+model Fibre Channel Switch.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1366,10 +1513,21 @@ SW-MIB
 node
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588
+1.3.6.1.4.1.1588.2.1.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The OID for Brocade's Silkworm 20x0 series
+model Fibre Channel Switch.
 </property>
 </object>
-<object id='commDev' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='sw21kN24k' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The OID for Brocade's Silkworm 2100 and 2400 series
+model Fibre Channel Switch.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1377,10 +1535,21 @@ SW-MIB
 node
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2
+1.3.6.1.4.1.1588.2.1.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The OID for Brocade's Silkworm 2100 and 2400 series
+model Fibre Channel Switch.
 </property>
 </object>
-<object id='fcSwitch' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='sw28k' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The OID for Brocade's Silkworm 2800 model Fibre Channel
+Switch.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1388,32 +1557,60 @@ SW-MIB
 node
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1
+1.3.6.1.4.1.1588.2.1.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The OID for Brocade's Silkworm 2800 model Fibre Channel
+Switch.
 </property>
 </object>
-<object id='fibrechannel' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swAgtTrapSeverityLevel' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This is the trap severity level associated with the
+swAgtTrapRcp. The trap severity level in conjunction with
+the an event's severity level. When an event occurs and if its
+severity level is at or below the set value, the SNMP trap is
+sent to configured trap recipients. The severity level is
+limited to particular events. If a new value is set successfully,
+it takes effect immediately.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
 <property type="string" id="nodetype" mode="w" >
-node
+column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1
+1.3.6.1.4.1.1588.2.1.1.1.4.11.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This is the trap severity level associated with the
+swAgtTrapRcp. The trap severity level in conjunction with
+the an event's severity level. When an event occurs and if its
+severity level is at or below the set value, the SNMP trap is
+sent to configured trap recipients. The severity level is
+limited to particular events. If a new value is set successfully,
+it takes effect immediately.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
 </property>
 </object>
-<object id='sw' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
+<object id='swBeaconAdmStatus' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The desired status of the switch beacon.
+When the beacon is set to on, the LEDs on the front
+panel of the switch run alternately from left to right
+and right to left. The color is yellow.
+When the beacon is set to off, each LED will be in
+its regular status indicating color and state.
 </property>
-<property type="string" id="nodetype" mode="w" >
-node
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1
-</property>
-</object>
-<object id='swAdmStatus' module='Products.ZenModel.MibNode' class='MibNode'>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1421,46 +1618,60 @@ SW-MIB
 scalar
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.8
+1.3.6.1.4.1.1588.2.1.1.1.1.19
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-The desired administrative status of the switch.
-A management station may place the switch in a desired
-state by setting this object accordingly. The states
-are as follow:
-o online(1) means set the switch to be accessible by an
-  external Fibre Channel port;
-o offline(2) means set the switch to be inaccesible;
-o testing(3) means set the switch to run the built-in test;
-o faulty(4) means set the switch to a 'soft' faulty
-  condition;
-o reboot(5) means set the switch to reboot in 1 second.
-o fastboot(6) means set the switch to fastboot in 1 second.
-Fastboot would cause the switch to boot but skip over the
-POST.
-
-When the switch is in faulty state, only two states
-can be set: faulty and reboot/fastboot.
+The desired status of the switch beacon.
+When the beacon is set to on, the LEDs on the front
+panel of the switch run alternately from left to right
+and right to left. The color is yellow.
+When the beacon is set to off, each LED will be in
+its regular status indicating color and state.
 </property>
 <property type="string" id="access" mode="w" >
 readwrite
 </property>
 </object>
-<object id='swAgtCfg' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swBeaconOperStatus' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The current operational status of the switch beacon.
+When the beacon is on, the LEDs on the front panel
+of the switch run alternately from left to right
+and right to left. The color is yellow.
+When the beacon is off, each LED will be in their
+its regular status indicating color and state.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
 <property type="string" id="nodetype" mode="w" >
-node
+scalar
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.4
+1.3.6.1.4.1.1588.2.1.1.1.1.18
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The current operational status of the switch beacon.
+When the beacon is on, the LEDs on the front panel
+of the switch run alternately from left to right
+and right to left. The color is yellow.
+When the beacon is off, each LED will be in their
+its regular status indicating color and state.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
 </property>
 </object>
-<object id='swAgtCmtyEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swBlmPerfALPAMntEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ ALPA monitoring counter for given ALPA.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1468,58 +1679,19 @@ SW-MIB
 row
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.4.11.1
+1.3.6.1.4.1.1588.2.1.1.1.23.1.1
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-An entry containing the Community parameters.
+ ALPA monitoring counter for given ALPA.
 </property>
 </object>
-<object id='swAgtCmtyIdx' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
+<object id='swBlmPerfALPAMntTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ALPA monitoring counter Table. 
 </property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.4.11.1.1
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object identifies the SNMPv1 Community entry.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swAgtCmtyStr' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.4.11.1.2
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This is a Community string supported by the agent.
-If a new value is set successfully, it takes effect
-immediately.
-</property>
-<property type="string" id="access" mode="w" >
-readwrite
-</property>
-</object>
-<object id='swAgtCmtyTable' module='Products.ZenModel.MibNode' class='MibNode'>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1527,17 +1699,22 @@ SW-MIB
 table
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.4.11
+1.3.6.1.4.1.1588.2.1.1.1.23.1
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-A table that contains, one entry for each Community,
-the access control and parameters of the Community.
+ALPA monitoring counter Table. 
 </property>
 </object>
-<object id='swAgtTrapRcp' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swBlmPerfAlpa' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ This Object identifies the ALPA values. These values
+range between x'01' and x'EF'(1 to 239). ALPA value x'00'
+is reserved for FL_Port
+		  If Alpa device is invalid, then it will have -1 value.  
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1545,138 +1722,28 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.4.11.1.3
+1.3.6.1.4.1.1588.2.1.1.1.23.1.1.3
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-This is the trap recipient associated with the
-Community. If a new value is set successfully, it takes
-effect immediately.
-</property>
-<property type="string" id="access" mode="w" >
-readwrite
-</property>
-</object>
-<object id='swBootDate' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.2
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The date and time when the system last booted, in
-displaybale textual format.
+ This Object identifies the ALPA values. These values
+range between x'01' and x'EF'(1 to 239). ALPA value x'00'
+is reserved for FL_Port
+		  If Alpa device is invalid, then it will have -1 value.  
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swBootPromLastUpdated' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
+<object id='swBlmPerfAlpaCRCCnt' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Get CRC count for given ALPA and port. This monitoring
+provides information on the number of CRC errors
+occurred on the frames destined to each possible ALPA
+attached to a specific port.
 </property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.5
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The information indicates the date when the boot PROM
-was last updated, in displayable textual format.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swCurrentDate' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.1
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The current date information in displayable textual
-format.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swDiagResult' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.20
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The result of the power-on startup (POST)
-diagnostics.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swDomainID' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2.1
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The current Fibre Channel domain ID of the switch.
-To set a new value, the switch (swAdmStatus) must be in
-offline or testing state.
-</property>
-<property type="string" id="access" mode="w" >
-readwrite
-</property>
-</object>
-<object id='swEvent' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-node
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.8
-</property>
-</object>
-<object id='swEventDescr' module='Products.ZenModel.MibNode' class='MibNode'>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1684,20 +1751,177 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.8.5.1.5
+1.3.6.1.4.1.1588.2.1.1.1.23.1.1.4
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-This object identifies the textual description of
-the event.
+Get CRC count for given ALPA and port. This monitoring
+provides information on the number of CRC errors
+occurred on the frames destined to each possible ALPA
+attached to a specific port.
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swEventEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swBlmPerfAlpaIndx' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ This Object identifies the ALPA index. There can be 126 ALPA values
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.23.1.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+ This Object identifies the ALPA index. There can be 126 ALPA values
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swBlmPerfAlpaPort' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ This Object identifies the port index of the switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.23.1.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+ This Object identifies the port index of the switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swBlmPerfEECRC' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ Get End to End CRC error for the frames that matched
+the SID-DID pair.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.23.2.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+ Get End to End CRC error for the frames that matched
+the SID-DID pair.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swBlmPerfEEDid' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Gets DID info by reference number.
+DID (Destination Identifier) is a 3-byte field in the
+frame header used to indicate the address identifier of 
+the N-Port to which the frame was sent.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.23.2.1.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Gets DID info by reference number.
+DID (Destination Identifier) is a 3-byte field in the
+frame header used to indicate the address identifier of 
+the N-Port to which the frame was sent.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swBlmPerfEEFCWRx' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Get End to End count of Fibre Channel words (FCW),
+received by the port, that matched
+the SID-DID pair. 
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.23.2.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Get End to End count of Fibre Channel words (FCW),
+received by the port, that matched
+the SID-DID pair. 
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swBlmPerfEEFCWTx' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Get End to End count of Fibre Channel words (FCW),
+transmitted by the port, that matched the SID-DID pair. 
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.23.2.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Get End to End count of Fibre Channel words (FCW),
+transmitted by the port, that matched the SID-DID pair. 
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swBlmPerfEEMntEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+End-to-End monitoring counter for given port.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1705,98 +1929,19 @@ SW-MIB
 row
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.8.5.1
+1.3.6.1.4.1.1588.2.1.1.1.23.2.1
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-An entry of the event table.
+End-to-End monitoring counter for given port.
 </property>
 </object>
-<object id='swEventIndex' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
+<object id='swBlmPerfEEMntTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ End-to-End  monitoring counter Table
 </property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.8.5.1.1
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object identifies the event entry.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swEventLevel' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.8.5.1.3
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object identifies the severity level of this
-event entry.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swEventNumEntries' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.8.4
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The number of entries in the Event Table.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swEventRepeatCount' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.8.5.1.4
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object identifies how many times this particular
-event has occurred.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swEventTable' module='Products.ZenModel.MibNode' class='MibNode'>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1804,16 +1949,19 @@ SW-MIB
 table
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.8.5
+1.3.6.1.4.1.1588.2.1.1.1.23.2
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-The table of event entries.
+ End-to-End  monitoring counter Table
 </property>
 </object>
-<object id='swEventTimeInfo' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swBlmPerfEEPort' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ This object identifies the port number of the switch.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1821,44 +1969,25 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.8.5.1.2
+1.3.6.1.4.1.1588.2.1.1.1.23.2.1.1
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-This object identifies the date and time when this
-event occurred, in textual format.
+ This object identifies the port number of the switch.
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swEventTrapLevel' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
+<object id='swBlmPerfEERefKey' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the reference number
+of the counter. This reference is  number assigned
+when a filter is created. In SNMP Index start one
+instead of 0, add one to actual ref key
 </property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.8.1
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object specifies the swEventTrap level in
-conjunction with an event's severity level. When an event
-occurs and if its severity level is at or below the value
-specified by this object instance, the agent will send
-the associated swEventTrap to configured recipients.
-</property>
-<property type="string" id="access" mode="w" >
-readwrite
-</property>
-</object>
-<object id='swFCPortAdmStatus' module='Products.ZenModel.MibNode' class='MibNode'>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1866,26 +1995,27 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.5
+1.3.6.1.4.1.1588.2.1.1.1.23.2.1.2
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-The desired state of the port. A management station
-may place the port in a desired state by setting this
-object accordingly.  The testing(3) state indicates that
-no user frames can be passed. As the result of
-either explicit management action or per configuration
-information accessible by the switch, swFCPortAdmStatus is
-	then changed to either the online(1) or testing(3)
-	states,	or remains in the offline(2) state.
+This object identifies the reference number
+of the counter. This reference is  number assigned
+when a filter is created. In SNMP Index start one
+instead of 0, add one to actual ref key
 </property>
 <property type="string" id="access" mode="w" >
-readwrite
+readonly
 </property>
 </object>
-<object id='swFCPortC3Discards' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swBlmPerfEESid' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ Gets SID info by reference number. SID (Source Identifier)
+is a 3-byte field in the frame header used to indicate the
+	address identifier of the N-Port from which the frame was sent.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1893,42 +2023,80 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.28
+1.3.6.1.4.1.1588.2.1.1.1.23.2.1.6
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-This object counts the number of Class 3
-frames that the port has discarded.
+ Gets SID info by reference number. SID (Source Identifier)
+is a 3-byte field in the frame header used to indicate the
+	address identifier of the N-Port from which the frame was sent.
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swFCPortCapacity' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swBlmPerfFltAlias' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ Alias name for the filter.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
 <property type="string" id="nodetype" mode="w" >
-scalar
+column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.1
+1.3.6.1.4.1.1588.2.1.1.1.23.3.1.4
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-The maximum number of Fibre Channel ports on this
-switch. It includes G_Port, F_Port, FL_Port and any other
-types of Fibre Channel port.
+ Alias name for the filter.
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swFCPortEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swBlmPerfFltCnt' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Get statistics of filter based monitor.
+Filter based monitoring provides information
+about a filter hit count such as
+	1.  Read command
+	2.  SCSI or IP traffic
+	3.  SCSI Read/Write
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.23.3.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Get statistics of filter based monitor.
+Filter based monitoring provides information
+about a filter hit count such as
+	1.  Read command
+	2.  SCSI or IP traffic
+	3.  SCSI Read/Write
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swBlmPerfFltMntEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ Filter base monitoring counter for given port.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -1936,489 +2104,19 @@ SW-MIB
 row
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1
+1.3.6.1.4.1.1588.2.1.1.1.23.3.1
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-An entry containing the configuration and service
-parameters of the switch port.
+ Filter base monitoring counter for given port.
 </property>
 </object>
-<object id='swFCPortIndex' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
+<object id='swBlmPerfFltMntTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Filter based monitoring counter.
 </property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.1
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object identifies the switch port index.
-Note that the value of a port index is 1 higher than the
-port number labeled on the front panel.
-E.g. port index 1 correspond to port number 0.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortLinkState' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.6
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object indicates the link state of the port.
-The value may be:
-  enabled(1) - port is allowed to participate in the FC-PH
-	protocol with its attached port (or ports if it is
-	in a FC-AL loop);
-  disabled(2) - the port is not allowed to participate in
-	the FC-PH protocol with its attached port(s);
-  loopback(3) - the port may transmit frames through an
-	internal path to verify the health of the transmitter
-	and receiver path.
-
-Note that when the port's link state changes, its
-operational status (swFCPortOpStatus) will be affected.
-</property>
-<property type="string" id="access" mode="w" >
-readwrite
-</property>
-</object>
-<object id='swFCPortLipIns' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.31
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of Loop Initializations
-that has been initiated by loop devices attached.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortLipLastAlpa' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.33
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object indicates the Physical Address (AL_PA)
-of the loop device that initiated the last
-Loop Initialization.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortLipOuts' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.32
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of Loop Initializations
-that has been initiated by the port.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortMcastTimedOuts' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.29
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of Multicast
-frames that has been timed out.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortNoTxCredits' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.20
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of times when the
-transmit credit has reached zero.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortOpStatus' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.4
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object identifies the operational status of
-the port. The online(1) state indicates that user frames
-can be passed. The unknown(0) state indicates that likely
-the port module is physically absent (see swFCPortPhyState).
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortPhyState' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.3
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object identifies the physical state of
-the port:
-	noCard(1)	no card present in this switch slot;
-	noGbic(2)	no GBIC module in this port;
-	laserFault(3)	the module is signaling a laser fault
-			(defective GBIC);
-	noLight(4)	the module is not receiving light;
-	noSync(5)	the module is receiving light but is
-			out of sync;
-	inSync(6)	the module is receiving light and is
-			in sync;
-	portFault(7)	the port is marked faulty (defective
-			GBIC, cable or device);
-	diagFault(8)	the port failed diagnostics (defective
-			G_Port or FL_Port card or motherboard);
-	lockRef(9)	the port is locking to the reference
-			signal.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxBadEofs' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.25
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of received frames that
-have bad EOF delimiter.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxBadOs' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.27
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of invalid Ordered
-Sets received.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxC3Frames' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.16
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of Class 3
-frames that the port has received.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxCrcs' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.22
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of CRC errors
-detected for frames received.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxEncInFrs' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.21
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of encoding error or
-disparity error inside frames received.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxEncOutFrs' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.26
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of encoding error or
-disparity error outside frames received.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxFrames' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.14
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of (Fibre Channel)
-frames that the port has received.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxLCs' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.17
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of Link Control
-frames that the port has received.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxMcasts' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.18
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of Multicast
-frames that the port has received.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxTooLongs' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.24
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of received frames that
-are too long.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxTruncs' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.23
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of truncated
-frames that the port has received.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortRxWords' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.12
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of Fibre Channel
-words that the port has received.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortTable' module='Products.ZenModel.MibNode' class='MibNode'>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -2426,17 +2124,19 @@ SW-MIB
 table
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2
+1.3.6.1.4.1.1588.2.1.1.1.23.3
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-A table that contains, one entry for each switch port,
-configuration and service parameters of the port.
+Filter based monitoring counter.
 </property>
 </object>
-<object id='swFCPortTooManyRdys' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swBlmPerfFltPort' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the port number of the switch.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -2444,20 +2144,24 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.19
+1.3.6.1.4.1.1588.2.1.1.1.23.3.1.1
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-This object counts the number of times when RDYs
-exceeds the frames received.
+This object identifies the port number of the switch.
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swFCPortTxC2Frames' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swBlmPerfFltRefkey' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ This object identifies the reference number of the filter.
+This reference number is assigned when a filter is created.
+In SNMP Index start one instead of 0, add one to actual ref key
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -2465,134 +2169,25 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.15
+1.3.6.1.4.1.1588.2.1.1.1.23.3.1.2
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-This object counts the number of Class 2
-frames that the port has transmitted.
+ This object identifies the reference number of the filter.
+This reference number is assigned when a filter is created.
+In SNMP Index start one instead of 0, add one to actual ref key
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swFCPortTxFrames' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
+<object id='swBlmPerfMnt' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The OID sub-tree for swBlmPerfMnt (Bloom Performance
+Monitor) group.
 </property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.13
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of (Fibre Channel)
-frames that the port has transmitted.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortTxMcasts' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.30
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of Multicast
-frames that has been transmitted.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortTxType' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.7
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object indicates the media transmitter type of
-the port. The value may be:
-  unknown(1)		cannot determined to the port driver
-  lw(2)			long wave laser
-  sw(3)			short wave laser
-  ld(4)			long wave LED
-  cu(5)			copper (electrical)
-
-Note that there is a new type of GBIC which has a serial ID
-and will be mapped as unknown(1) for the current firmware
-revision.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortTxWords' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.11
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object counts the number of Fibre Channel
-words that the port has transmitted.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCPortType' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6.2.1.2
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object identifies the type of switch port.
-It may be of type stitch(1) or flannel(2).
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFCport' module='Products.ZenModel.MibNode' class='MibNode'>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -2600,31 +2195,20 @@ SW-MIB
 node
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.6
-</property>
-</object>
-<object id='swFWLastUpdated' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.3
+1.3.6.1.4.1.1588.2.1.1.1.23
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-The information indicates the date when the firmware
-was last updated, in displayable textual format.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
+The OID sub-tree for swBlmPerfMnt (Bloom Performance
+Monitor) group.
 </property>
 </object>
-<object id='swFabric' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swEndDevice' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The OID sub-tree for swEndDevice group.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -2632,175 +2216,19 @@ SW-MIB
 node
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2
-</property>
-</object>
-<object id='swFirmwareVersion' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.6
+1.3.6.1.4.1.1588.2.1.1.1.21
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-The current version of the firwmare.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
+The OID sub-tree for swEndDevice group.
 </property>
 </object>
-<object id='swFlashDLAdmStatus' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
+<object id='swEndDeviceAlpa' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the alpa of the end device.
 </property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.12
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The desired state of the boot FLASH.
-A management station may place the boot FLASH in a desired
-state by setting this object accordingly.
-The sw-upgraded(2) state indicates that the boot FLASH shall be
-upgraded from the host specified in swFlashDLHost.0,
-with the user name specified in swFlashDLUser.0, and
-the new firmware image file specified in swFlashDLFile.0.
-</property>
-<property type="string" id="access" mode="w" >
-readwrite
-</property>
-</object>
-<object id='swFlashDLFile' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.15
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The file name of the firmware image.
-</property>
-<property type="string" id="access" mode="w" >
-readwrite
-</property>
-</object>
-<object id='swFlashDLHost' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.13
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The name or IP address (in dot notation) of the host
-to download the firmware image to the FLASH.
-</property>
-<property type="string" id="access" mode="w" >
-readwrite
-</property>
-</object>
-<object id='swFlashDLOperStatus' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.11
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The operational status of the boot FLASH.
-The operational states are as follow:
-o current(1) indicates that the boot FLASH contains the
-  current firmware image; and
-o upgraded(2) state indicates that it contains the image
-  upgraded from the swFlashDLHost.0.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swFlashDLUser' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.14
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The user name on the host to download the firmware
-image to the boot FLASH.
-</property>
-<property type="string" id="access" mode="w" >
-readwrite
-</property>
-</object>
-<object id='swFlashLastUpdated' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.4
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The information indicates the date when the FLASH
-was last updated, in displayable textual format.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swModule' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-node
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.3
-</property>
-</object>
-<object id='swNbBaudRate' module='Products.ZenModel.MibNode' class='MibNode'>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -2808,36 +2236,22 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2.9.1.5
+1.3.6.1.4.1.1588.2.1.1.1.21.1.1.2
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-The baud rate of the ISL.
+This object identifies the alpa of the end device.
 </property>
 <property type="string" id="access" mode="w" >
-readonly
+noaccess
 </property>
 </object>
-<object id='swNbEntry' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
+<object id='swEndDeviceInvalidCRC' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Invalid CRC count for the end device.
 </property>
-<property type="string" id="nodetype" mode="w" >
-row
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2.9.1
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-An entry containing each neighbor ISL parameters.
-</property>
-</object>
-<object id='swNbIndex' module='Products.ZenModel.MibNode' class='MibNode'>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -2845,19 +2259,22 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2.9.1.1
+1.3.6.1.4.1.1588.2.1.1.1.21.1.1.9
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-This object identifies the neighbour ISL entry.
+Invalid CRC count for the end device.
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swNbIslState' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swEndDeviceInvalidWord' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Invalid word count for the end device.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -2865,19 +2282,22 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2.9.1.6
+1.3.6.1.4.1.1588.2.1.1.1.21.1.1.8
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-The current state of the ISL.
+Invalid word count for the end device.
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swNbMyPort' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swEndDeviceLinkFailure' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Link failure count for the end device.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -2885,19 +2305,22 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2.9.1.2
+1.3.6.1.4.1.1588.2.1.1.1.21.1.1.4
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-This is the port that has an ISL to another switch.
+Link failure count for the end device.
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swNbRemDomain' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swEndDevicePort' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the port of the end device.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -2905,20 +2328,23 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2.9.1.3
+1.3.6.1.4.1.1588.2.1.1.1.21.1.1.1
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-This is the Fibre Channel domain on the other end
-of the ISL.
+This object identifies the port of the end device.
 </property>
 <property type="string" id="access" mode="w" >
-readonly
+noaccess
 </property>
 </object>
-<object id='swNbRemPort' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swEndDevicePortID' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The object identifies the Fibre Channel port address
+ID of the entry.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -2926,267 +2352,7 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2.9.1.4
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This is the port index on the other end of the ISL.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNbTable' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-table
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2.9
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This table contains the ISLs in the immediate
-neighorhood of the switch.
-</property>
-</object>
-<object id='swNs' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-node
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7
-</property>
-</object>
-<object id='swNsCos' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1.10
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The object identifies the class of services supported
-by the port. The value is a bit-map defined as follows:
-o bit 0 is class F,
-o bit 1 is class 1,
-o bit 2 is class 2,
-o bit 3 is class 3,
-o bit 4 is class 4, etc.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNsEntryIndex' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1.1
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The object identifies the Name Server database entry.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNsFc4' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1.11
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The object identifies the FC-4s supported
-by the port as defined in FC-GS-2.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNsIPA' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1.8
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The object identifies the Initial Process Associator
-of the node for the entry as defined in FC-GS-2.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNsIpAddress' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1.9
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The object identifies the IP address of the node
-for the entry as defined in FC-GS-2. The format of the address
-is in IPv6.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNsLocalEntry' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-row
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-An entry of the local Name Server database.
-</property>
-</object>
-<object id='swNsLocalNumEntry' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.1
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The number of local Name Server entries.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNsLocalTable' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-table
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The table of local Name Server entries.
-</property>
-</object>
-<object id='swNsNodeName' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1.6
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The object identifies the Fibre Channel World_wide
-Name of the associated node as defined in FC-GS-2.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNsNodeSymb' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1.7
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The object identifies the contents of a Symbolic Name
-of the the node associated with the entry. In FC-GS-2,
-a Symbolic Name consists of a byte array of 1 through 256
-bytes,	and the first byte of the array specifies the length
-of its 'contents'.
-This object variable corresponds to the 'contents' of the
-Symbolic Name, without the first byte (specifying the length).
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNsPortID' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1.2
+1.3.6.1.4.1.1588.2.1.1.1.21.1.1.3
 </property>
 <property type="string" id="status" mode="w" >
 current
@@ -3199,7 +2365,10 @@ ID of the entry.
 readonly
 </property>
 </object>
-<object id='swNsPortName' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swEndDeviceProtoErr' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Protocol err count for the end device.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -3207,155 +2376,22 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1.4
+1.3.6.1.4.1.1588.2.1.1.1.21.1.1.7
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-The object identifies the Fibre Channel World_wide
-Name of the port entry.
+Protocol err count for the end device.
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swNsPortSymb' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
+<object id='swEndDeviceRlsEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry of an individual end devices' rls.
 </property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1.5
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The object identifies the contents of a Symbolic Name
-of the port entry. In FC-GS-2, a Symbolic Name consists of
-a byte array of 1 through 256 bytes, and the first byte of the
-array specifies the length of its 'contents'.
-This object variable corresponds to the 'contents' of the
-Symbolic Name, without the first byte.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNsPortType' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.7.2.1.3
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The object identifies the type of port: N_Port,
-NL_Port, etc., for this entry. The type is defined in FC-GS-2.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNumNbs' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2.8
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The number of Inter-Switch Links in the (immediate)
-neighborhood.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swNumSensors' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.21
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The number of sensors inside the switch.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swOperStatus' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.7
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The current operational status of the switch.
-The states are as follow:
-o online(1) means the switch is accessible by an external
-  Fibre Channel port;
-o offline(2) means the switch is not accesible;
-o testing(3) means the switch is in a built-in test mode
-  and is not accessible by an external Fibre Channel port;
-o faulty(4) means the switch is not operational.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swPrincipalSwitch' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-scalar
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.2.2
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object indicates whether the switch is
-the Principal switch as per FC-SW.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swSensorEntry' module='Products.ZenModel.MibNode' class='MibNode'>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -3363,78 +2399,19 @@ SW-MIB
 row
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.22.1
+1.3.6.1.4.1.1588.2.1.1.1.21.1.1
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-An entry of the sensor information.
+An entry of an individual end devices' rls.
 </property>
 </object>
-<object id='swSensorIndex' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
+<object id='swEndDeviceRlsTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The table of individual end devices' rls.
 </property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.22.1.1
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-This object identifies the sensor.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swSensorInfo' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.22.1.5
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-Additional displayable information on the sensor.
-In V1.6, it contains the sensor type and number
-in textual format. For example, 'Temp 3', 'Fan 6'.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swSensorStatus' module='Products.ZenModel.MibNode' class='MibNode'>
-<property type="string" id="moduleName" mode="w" >
-SW-MIB
-</property>
-<property type="string" id="nodetype" mode="w" >
-column
-</property>
-<property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.22.1.3
-</property>
-<property type="string" id="status" mode="w" >
-current
-</property>
-<property type="string" id="description" mode="w" >
-The current status of the sensor.
-</property>
-<property type="string" id="access" mode="w" >
-readonly
-</property>
-</object>
-<object id='swSensorTable' module='Products.ZenModel.MibNode' class='MibNode'>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -3442,16 +2419,19 @@ SW-MIB
 table
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.22
+1.3.6.1.4.1.1588.2.1.1.1.21.1
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-The table of sensor entries.
+The table of individual end devices' rls.
 </property>
 </object>
-<object id='swSensorType' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swEndDeviceSigLoss' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Sig loss count for the end device.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -3459,19 +2439,22 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.22.1.2
+1.3.6.1.4.1.1588.2.1.1.1.21.1.1.6
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-This object identifies the sensor type.
+Sig loss count for the end device.
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swSensorValue' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swEndDeviceSyncLoss' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Sync loss count for the end device.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -3479,24 +2462,1367 @@ SW-MIB
 column
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1.22.1.4
+1.3.6.1.4.1.1588.2.1.1.1.21.1.1.5
 </property>
 <property type="string" id="status" mode="w" >
 current
 </property>
 <property type="string" id="description" mode="w" >
-The current value of the sensor.
-The value, -2147483648, represents an unknown quantity.
-It also means that the sensor does not have the capability to
-measure the actual value. In V1.6, the temperature sensor
-value will be in Celsius; the fan and power supply sensor
-reading will be unknown.
+Sync loss count for the end device.
 </property>
 <property type="string" id="access" mode="w" >
 readonly
 </property>
 </object>
-<object id='swSystem' module='Products.ZenModel.MibNode' class='MibNode'>
+<object id='swEtherIPAddress' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The IP Address of the Ethernet interface of this logical
+switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.1.25
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The IP Address of the Ethernet interface of this logical
+switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swEtherIPMask' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The IP Mask of the Ethernet interface of this logical switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.1.26
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The IP Mask of the Ethernet interface of this logical switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFCIPAddress' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The IP Address of the FC interface of this logical switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.1.27
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The IP Address of the FC interface of this logical switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFCIPMask' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The IP Mask of the FC interface of this logical switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.1.28
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The IP Mask of the FC interface of this logical switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFCPortBrcdType' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The Brocade port type.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.6.2.1.39
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The Brocade port type.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFCPortFlag' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A bit  map  of  port  status  flags which includes the information of port type.
+Currently this will indicate if the port is virtual or physical.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.6.2.1.38
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A bit  map  of  port  status  flags which includes the information of port type.
+Currently this will indicate if the port is virtual or physical.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFCPortName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A string indicates the name of the addressed port.
+The names should be persistent across switch reboots.
+Port names do not have to be unique within a switch or
+within a fabric.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A string indicates the name of the addressed port.
+The names should be persistent across switch reboots.
+Port names do not have to be unique within a switch or
+within a fabric.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFCPortSpecifier' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This string indicates the physical port number of the addressed port.
+The format of the string is: &lt;slot&gt;/port, where 'slot' being
+present only for bladed systems. 
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This string indicates the physical port number of the addressed port.
+The format of the string is: &lt;slot&gt;/port, where 'slot' being
+present only for bladed systems. 
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFCPortSpeed' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The desired baud rate for the port. It can have the
+values of 1GB (1), 2GB (2), Auto-Negotiate (3), 4GB (4), 8GB (5),
+or 10GB (6). Some of the above values may not be supported
+by all type of switches.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.6.2.1.35
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The desired baud rate for the port. It can have the
+values of 1GB (1), 2GB (2), Auto-Negotiate (3), 4GB (4), 8GB (5),
+or 10GB (6). Some of the above values may not be supported
+by all type of switches.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFCPortWwn' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The World_wide_Name of the Fibre Channel port.
+The contents of an instance are in the IEEE extended format
+as specified in FC-PH; the 12-bit port identifier represents
+the port number within the switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.6.2.1.34
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The World_wide_Name of the Fibre Channel port.
+The contents of an instance are in the IEEE extended format
+as specified in FC-PH; the 12-bit port identifier represents
+the port number within the switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFabricMemDid' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the domain id of the member
+switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.10.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the domain id of the member
+switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFabricMemEIP' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the ethernet IP address
+of the member switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.10.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the ethernet IP address
+of the member switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFabricMemEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry containing each switch in the fabric.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.10.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry containing each switch in the fabric.
+</property>
+</object>
+<object id='swFabricMemFCIP' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the Fibre Channel IP address
+of the member switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.10.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the Fibre Channel IP address
+of the member switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFabricMemGWIP' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the Gateway IP address
+of the member switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.10.1.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the Gateway IP address
+of the member switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFabricMemName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the name of the member switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.10.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the name of the member switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFabricMemShortVersion' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies Fabric OS version of
+the member switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.10.1.8
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies Fabric OS version of
+the member switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFabricMemTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This table contains information on the member 
+switches of a fabric. This may not be available on
+all versions of Fabric OS.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.10
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This table contains information on the member 
+switches of a fabric. This may not be available on
+all versions of Fabric OS.
+</property>
+</object>
+<object id='swFabricMemType' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the member switch type.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.10.1.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the member switch type.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFabricMemWwn' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the World wide name of the
+member switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.10.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the World wide name of the
+member switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFlashDLPassword' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The password to be used in for FTP transfer of
+files in the download or upload operation.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.1.16
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The password to be used in for FTP transfer of
+files in the download or upload operation.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwActLevel' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A level where all the actions are set at.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.26
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A level where all the actions are set at.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwBehaviorInt' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A integer of which the thresholds generate continuous event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.11
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A integer of which the thresholds generate continuous event.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwBehaviorType' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A behavior of which the thresholds generate event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.10
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A behavior of which the thresholds generate event.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwClassAreaEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry of the classes and areas.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry of the classes and areas.
+</property>
+</object>
+<object id='swFwClassAreaIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the class type.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the class type.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwClassAreaTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The table of classes and areas.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The table of classes and areas.
+</property>
+</object>
+<object id='swFwCurVal' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is a current counter of the threshold.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is a current counter of the threshold.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwCustAboveActs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+custom action matrix for above event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.23
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+custom action matrix for above event.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwCustBelowActs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+custom action matrix for below event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.22
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+custom action matrix for below event.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwCustBufSize' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A custom buffer size value.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.12
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A custom buffer size value.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwCustChangedActs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+custom action matrix for changed event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.20
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+custom action matrix for changed event.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwCustExceededActs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+custom action matrix for exceeded event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.21
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+custom action matrix for exceeded event.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwCustHigh' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A custom high threshold value.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.11
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A custom high threshold value.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwCustInBetweenActs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+custom action matrix for in-between event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.24
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+custom action matrix for in-between event.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwCustLow' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A custom low threshold value.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.10
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A custom low threshold value.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwCustTimebase' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A custom timebase for the current threshold counter.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.9
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A custom timebase for the current threshold counter.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwCustUnit' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A custom unit string name for a threshold area.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.8
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A custom unit string name for a threshold area.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwDefaultAboveActs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Default action matrix for above event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.18
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Default action matrix for above event.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwDefaultBelowActs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Default action matrix for below event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.17
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Default action matrix for below event.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwDefaultBufSize' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A Default buffer size value.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A Default buffer size value.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwDefaultChangedActs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Default action matrix for changed event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.15
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Default action matrix for changed event.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwDefaultExceededActs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Default action matrix for exceeded event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.16
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Default action matrix for exceeded event.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwDefaultHigh' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A Default high threshold value.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A Default high threshold value.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwDefaultInBetweenActs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Default action matrix for in-between event.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.19
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Default action matrix for in-between event.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwDefaultLow' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A Default low threshold value.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A Default low threshold value.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwDefaultTimebase' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A Default timebase for the current threshold counter.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A Default timebase for the current threshold counter.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwDefaultUnit' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A Default unit string name for a threshold area.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A Default unit string name for a threshold area.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwFabricWatchLicense' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+tells if licensed or not.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+tells if licensed or not.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwLabel' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is a label of the threshold.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is a label of the threshold.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwLastEvent' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is a last event type of the threshold.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is a last event type of the threshold.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwLastEventTime' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is a last event time of the threshold.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.8
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is a last event time of the threshold.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwLastEventVal' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is a last event value of the threshold.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is a last event value of the threshold.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwLastSeverityLevel' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is a last event severity level of the threshold.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.12
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is a last event severity level of the threshold.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwLastState' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is a last event state of the threshold.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.9
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is a last event state of the threshold.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is a name of the threshold.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is a name of the threshold.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwStatus' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies if an threshold is
+enabled or disabled.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies if an threshold is
+enabled or disabled.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwSystem' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The OID sub-tree for swFwSystem group.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-MIB
 </property>
@@ -3504,7 +3830,1081 @@ SW-MIB
 node
 </property>
 <property type="string" id="oid" mode="w" >
-1.3.6.1.4.1.1588.2.1.1.1.1
+1.3.6.1.4.1.1588.2.1.1.1.10
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The OID sub-tree for swFwSystem group.
+</property>
+</object>
+<object id='swFwThLevel' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A level where all the threshold values are set at.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.13
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A level where all the threshold values are set at.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwThresholdEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry of an individual threshold.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry of an individual threshold.
+</property>
+</object>
+<object id='swFwThresholdIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the element index of
+an threshold.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the element index of
+an threshold.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwThresholdTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The table of individual thresholds.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The table of individual thresholds.
+</property>
+</object>
+<object id='swFwValidActs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+matrix of valid acts for an class/area.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.25
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+matrix of valid acts for an class/area.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swFwWriteActVals' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is set to apply act value changes.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.14
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is set to apply act value changes.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swFwWriteThVals' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is set to apply the value changes.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.10.2.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is set to apply the value changes.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swGroup' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The OID sub-tree for swGroup group.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.22
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The OID sub-tree for swGroup group.
+</property>
+</object>
+<object id='swGroupEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry of table of groups.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.22.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry of table of groups.
+</property>
+</object>
+<object id='swGroupId' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the Group Id  of the
+member switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.22.2.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the Group Id  of the
+member switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swGroupIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is the group index starting from 1.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.22.1.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is the group index starting from 1.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swGroupMemEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry for a member of a group.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.22.2.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry for a member of a group.
+</property>
+</object>
+<object id='swGroupMemPos' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies position of the member
+switch in the group. This is based on the order
+that the switches were added in the group.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.22.2.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies position of the member
+switch in the group. This is based on the order
+that the switches were added in the group.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swGroupMemTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The table of members of all groups. This may not
+be available on all versions of Fabric OS.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.22.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The table of members of all groups. This may not
+be available on all versions of Fabric OS.
+</property>
+</object>
+<object id='swGroupMemWwn' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the WWN of the member switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.22.2.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the WWN of the member switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swGroupName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the name of the group.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.22.1.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the name of the group.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swGroupTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The table of groups. This may not be available
+on all versions of Fabric OS.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.22.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The table of groups. This may not be available
+on all versions of Fabric OS.
+</property>
+</object>
+<object id='swGroupType' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the type of the group.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.22.1.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the type of the group.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swID' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of the logical switch (0/1)
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.1.24
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of the logical switch (0/1)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swIDIDMode' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Status of Insistent Domain ID (IDID) mode. Status
+indicating IDID mode is enabled or not.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.11
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Status of Insistent Domain ID (IDID) mode. Status
+indicating IDID mode is enabled or not.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swMibModule' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.3.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+</object>
+<object id='swNbIslCost' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The current link cost of the ISL.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.9.1.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The current link cost of the ISL.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swNbRemPortName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The World_wide_Name of the remote port.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.2.9.1.8
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The World_wide_Name of the remote port.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swNsHardAddr' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The object identifies the 24-bit hard address of the node
+for the entry.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.7.2.1.14
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The object identifies the 24-bit hard address of the node
+for the entry.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swNsIpNxPort' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The object identifies IpAddress of the Nx_port for the entry.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.7.2.1.12
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The object identifies IpAddress of the Nx_port for the entry.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swNsWwn' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The object identifies the World Wide Name (WWN) of the Fx_port
+for the entry.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.7.2.1.13
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The object identifies the World Wide Name (WWN) of the Fx_port
+for the entry.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swPortTrunked' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The active trunk status for a member port.
+Values are enabled(1) or disabled(0).
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.2.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The active trunk status for a member port.
+Values are enabled(1) or disabled(0).
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swSsn' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The soft serial number of the switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.1.10
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The soft serial number of the switch.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swSwitchTrunkable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The trunking status of the switch - whether the switch supports the trunking feature or not. The values are
+yes(8) - the trunking feature is supported
+no(0). - the trunking feature is not supported. 
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The trunking status of the switch - whether the switch supports the trunking feature or not. The values are
+yes(8) - the trunking feature is supported
+no(0). - the trunking feature is not supported. 
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swTelnetShellAdmStatus' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The desired administrative status of the Telnet
+shell. By setting it to terminated(1), the current
+Telnet shell task is deleted. When this variable instance
+is read, it reports the value last set through SNMP.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.1.9
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The desired administrative status of the Telnet
+shell. By setting it to terminated(1), the current
+Telnet shell task is deleted. When this variable instance
+is read, it reports the value last set through SNMP.
+</property>
+<property type="string" id="access" mode="w" >
+readwrite
+</property>
+</object>
+<object id='swTrackChangesInfo' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Track changes string. For trap only
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.1.23
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Track changes string. For trap only
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swTrapsV2' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The Traps for Brocade's Fibre Channel Switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.0
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The Traps for Brocade's Fibre Channel Switch.
+</property>
+</object>
+<object id='swTrunk' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The OID sub-tree for swTrunk group.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The OID sub-tree for swTrunk group.
+</property>
+</object>
+<object id='swTrunkEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Entry for the trunking table.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.2.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Entry for the trunking table.
+</property>
+</object>
+<object id='swTrunkGroupNumber' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is a logical entity which specifies 
+the Group Number to which the port belongs to.
+If this value is Zero it means the port is not Trunked.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.2.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is a logical entity which specifies 
+the Group Number to which the port belongs to.
+If this value is Zero it means the port is not Trunked.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swTrunkGrpEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Entry for the trunking Group table.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.3.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Entry for the trunking Group table.
+</property>
+</object>
+<object id='swTrunkGrpMaster' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object gives the master port id
+for the TrunkGroup.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.3.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object gives the master port id
+for the TrunkGroup.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swTrunkGrpNumber' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object is a logical entity which
+specifies the Group Number to which port 
+belongs to.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.3.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object is a logical entity which
+specifies the Group Number to which port 
+belongs to.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swTrunkGrpRx' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Gives the aggregate value of the  
+received words by this TrunkGroup.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.3.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Gives the aggregate value of the  
+received words by this TrunkGroup.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swTrunkGrpTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Table to display trunking Performance
+information for the switch.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Table to display trunking Performance
+information for the switch.
+</property>
+</object>
+<object id='swTrunkGrpTx' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Gives the aggregate value of the    
+transmitted words from this TrunkGroup.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.3.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Gives the aggregate value of the    
+transmitted words from this TrunkGroup.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swTrunkMaster' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Port number that is the trunk master of the group. 
+The trunk master implicitly defines the group. 
+All ports with the same master are considered to be part of the same group.
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.2.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Port number that is the trunk master of the group. 
+The trunk master implicitly defines the group. 
+All ports with the same master are considered to be part of the same group.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swTrunkPortIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+This object identifies the switch port index.
+Note that the value of a port index is 1 higher than the
+port number labeled on the front panel.
+e.g. port index 1 correspond to port number 0. 
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.2.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+This object identifies the switch port index.
+Note that the value of a port index is 1 higher than the
+port number labeled on the front panel.
+e.g. port index 1 correspond to port number 0. 
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swTrunkTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+ Table to display trunking information for the switch. 
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.24.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+ Table to display trunking information for the switch. 
+</property>
+</object>
+</tomanycont>
+<tomanycont id='notifications'>
+<object id='swFabricWatchTrap' module='Products.ZenModel.MibNotification' class='MibNotification'>
+<property id='zendoc' type='string'>
+trap to be sent by Fabric Watch to notify of an event
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+notification
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.0.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+trap to be sent by Fabric Watch to notify of an event
+</property>
+<property type="lines" id="objects" mode="w" >
+{'swGroupName': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swFwLabel': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swSsn': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swGroupMemPos': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swGroupType': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swFwName': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swFwLastSeverityLevel': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swFwLastEvent': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swFwLastEventTime': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swFwClassAreaIndex': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swFwLastState': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swFwThresholdIndex': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swFwLastEventVal': {'nodetype': 'object', 'module': 'SW-MIB'}}
+</property>
+</object>
+<object id='swTrackChangesTrap' module='Products.ZenModel.MibNotification' class='MibNotification'>
+<property id='zendoc' type='string'>
+trap to be sent for tracking login/logout/config changes
+</property>
+<property type="string" id="moduleName" mode="w" >
+SW-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+notification
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.1588.2.1.1.1.0.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+trap to be sent for tracking login/logout/config changes
+</property>
+<property type="lines" id="objects" mode="w" >
+{'swTrackChangesInfo': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swGroupName': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swSsn': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swGroupType': {'nodetype': 'object', 'module': 'SW-MIB'}, 'swGroupMemPos': {'nodetype': 'object', 'module': 'SW-MIB'}}
 </property>
 </object>
 </tomanycont>
@@ -3515,6 +4915,10 @@ SMIv1
 </property>
 <tomanycont id='notifications'>
 <object id='swEventTrap' module='Products.ZenModel.MibNotification' class='MibNotification'>
+<property id='zendoc' type='string'>
+This trap is generated when an event whose
+level at or below swEventTrapLevel occurs.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-TRAP
 </property>
@@ -3536,6 +4940,13 @@ level at or below swEventTrapLevel occurs.
 </property>
 </object>
 <object id='swFCPortScn' module='Products.ZenModel.MibNotification' class='MibNotification'>
+<property id='zendoc' type='string'>
+A swFCPortScn(3) is generated whenever an FC_Port
+changes its operational state. For instance, the FC_Port
+goes from on-line to offline. The VarBind in the Trap Data
+Unit shall contain the corresponding instance of the
+FC_Port's operational status and index.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-TRAP
 </property>
@@ -3560,6 +4971,10 @@ FC_Port's operational status and index.
 </property>
 </object>
 <object id='swFault' module='Products.ZenModel.MibNotification' class='MibNotification'>
+<property id='zendoc' type='string'>
+A swFault(1) is generated whenever the diagnostics
+detects a fault with the switch.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-TRAP
 </property>
@@ -3581,6 +4996,15 @@ detects a fault with the switch.
 </property>
 </object>
 <object id='swSensorScn' module='Products.ZenModel.MibNotification' class='MibNotification'>
+<property id='zendoc' type='string'>
+A swSensorScn(2) is generated whenever an
+environment sensor changes its operational state. For instance,
+a fan stop working. The VarBind in the Trap Data Unit shall
+contain the corresponding instance of the sensor
+status, sensor index, sensor type, sensor value (reading)
+and sensor information. Note that the sensor information
+contains the type of sensor and its number in textual format.
+</property>
 <property type="string" id="moduleName" mode="w" >
 SW-TRAP
 </property>
