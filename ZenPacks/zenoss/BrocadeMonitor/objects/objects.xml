@@ -53,6 +53,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='adminStatus' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The desired state of the FxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 GAUGE
 </property>
@@ -89,6 +92,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c1Discards' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 1 frames discarded by this FxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -125,6 +131,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c1InFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 1 frames (other than Class 1 connect-request) received by this FxPort from its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -161,6 +170,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c1InOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 1 frame octets, including the frame delimiters, received by this FxPort from its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -197,6 +209,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c1OutFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 1 frames (other than Class 1 connect-request) delivered through this FxPort to its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -233,6 +248,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c1OutOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 1 frame octets, including the frame delimiters, delivered through this FxPort its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -269,6 +287,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c2Discards' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 2 frames discarded by this FxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -305,6 +326,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c2InFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 2 frames received by this FxPort from its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -341,6 +365,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c2InOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 2 frame octets, including the frame delimiters, received by this FxPort from its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -377,6 +404,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c2OutFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 2 frames delivered through this FxPort to its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -413,6 +443,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c2OutOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 2 frame octets, including the frame delimiters, delivered through this FxPort to its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -449,6 +482,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c3Discards' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 3 frames discarded by this FxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -485,6 +521,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c3InFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 3 frames received by this FxPort from its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -521,6 +560,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c3InOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 3 frame octets, including the frame delimiters, received by this FxPort from its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -557,6 +599,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c3OutFrames' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 3 frames delivered through this FxPort to its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -593,6 +638,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='c3OutOctets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of Class 3 frame octets, including the frame delimiters, delivered through this FxPort to its attached NxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -629,6 +677,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='linkFailures' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of link failures detected by this FxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -665,6 +716,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='operStatus' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The current operational status of the FxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 GAUGE
 </property>
@@ -701,6 +755,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='sigLosses' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of loss of signal detected by the FxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
@@ -737,6 +794,9 @@ Auto
 </property>
 <tomanycont id='datapoints'>
 <object id='syncLosses' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The number of loss of synchronization detected by the FxPort.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 COUNTER
 </property>
