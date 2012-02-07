@@ -57,12 +57,6 @@ class FCPort(DeviceComponent, ManagedEntity):
             'immediate_view' : 'viewFCPort',
             'actions'        :
             ( 
-                { 'id'            : 'perfServer'
-                , 'name'          : 'Graphs'
-                , 'action'        : 'viewDevicePerformance'
-                , 'permissions'   : (ZEN_VIEW, )
-                },
-
                 { 'id'            : 'status'
                 , 'name'          : 'Status'
                 , 'action'        : 'viewFCPort'
@@ -73,11 +67,6 @@ class FCPort(DeviceComponent, ManagedEntity):
                 , 'action'        : 'objTemplates'
                 , 'permissions'   : (ZEN_CHANGE_SETTINGS, )
                 },                
-                { 'id'            : 'viewHistory'
-                , 'name'          : 'Modifications'
-                , 'action'        : 'viewHistory'
-                , 'permissions'   : (ZEN_VIEW, )
-                },
             )
           },
         )
