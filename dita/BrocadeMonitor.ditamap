@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+   <title>BrocadeMonitor</title>
+   <topicref href="topics/BrocadeMonitor.dita">
+      <topicref href="topics/BrocadeMonitor_ref-Prerequisites.dita"/>
+      <topicref href="topics/BrocadeMonitor_ref-Configuring-Brocade-Devices-to-Allow-SNMP-Queries.dita"/>
+      <topicref href="topics/BrocadeMonitor_task-Configuring.dita"/>
+      <topicref href="topics/BrocadeMonitor_ref-Viewing-Fibre-Channel-Port-Information.dita"/>
+      <topicref href="topics/BrocadeMonitor_ref-Daemons.dita"/>
+   </topicref>
+</map>

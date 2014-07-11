@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="d14e66"><title>Configuring Brocade Devices to Allow SNMP Queries</title><refbody><section><p>Configure the Brocade devices to allow SNMP queries from the
+        <ph conkeyref="names/platform"/> server, and send
+        SNMP v1 or SNMP v2 traps to the <ph conkeyref="names/platform"/> server.</p></section></refbody></reference>
