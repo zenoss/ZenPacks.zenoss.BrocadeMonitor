@@ -32,8 +32,8 @@ class FcPortInfo(ComponentInfo):
             4:'Link Failure'
         }
         statusCode = 0
-        if hasattr(self, 'getBulkLoadProperty'):
-            statusCode = self.getBulkLoadProperty('operStatus')
+        if hasattr(self, 'getFetchedDataPoint'):
+            statusCode = self.getFetchedDataPoint('operStatus')
         else:
             statusCode = self._object.operStatus()
         operStatus = operStatusMap.get(statusCode,
@@ -45,8 +45,8 @@ class FcPortInfo(ComponentInfo):
             1:'Online',
             2:'Testing',
         }
-        if hasattr(self, 'getBulkLoadProperty'):
-            statusCode = self.getBulkLoadProperty('adminStatus')
+        if hasattr(self, 'getFetchedDataPoint'):
+            statusCode = self.getFetchedDataPoint('adminStatus')
         else:
             statusCode = self._object.adminStatus()
         adminStatus = adminStatusMap.get(statusCode,
