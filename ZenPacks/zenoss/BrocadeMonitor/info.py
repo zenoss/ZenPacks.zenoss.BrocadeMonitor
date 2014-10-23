@@ -1,10 +1,10 @@
 ##############################################################################
-# 
+#
 # Copyright (C) Zenoss, Inc. 2010, all rights reserved.
-# 
+#
 # This content is made available according to terms specified in
 # License.zenoss under the directory where your Zenoss product is installed.
-# 
+#
 ##############################################################################
 
 
@@ -19,8 +19,11 @@ from ZenPacks.zenoss.StorageBase.interfaces import IFcPortInfo
 class FcPortInfo(ComponentInfo):
     implements(IFcPortInfo)
 
+    dataPointsToFetch = ['operStatus', 'adminStatus']
+
     @property
     def portStatus(self):
+        # operStatus
         operStatusMap = {
             0:'Unknown',
             1:'Online',
@@ -28,16 +31,24 @@ class FcPortInfo(ComponentInfo):
             3:'Testing',
             4:'Link Failure'
         }
-        statusCode = self._object.operStatus()
+        statusCode = 0
+        if hasattr(self, 'getBulkLoadProperty'):
+            statusCode = self.getBulkLoadProperty('operStatus')
+        else:
+            statusCode = self._object.operStatus()
         operStatus = operStatusMap.get(statusCode,
                 'Unknown (%s)' % statusCode)
 
+        # adminStatus
         adminStatusMap = {
             0:'Unknown',
             1:'Online',
             2:'Testing',
         }
-        statusCode = self._object.adminStatus()
+        if hasattr(self, 'getBulkLoadProperty'):
+            statusCode = self.getBulkLoadProperty('adminStatus')
+        else:
+            statusCode = self._object.adminStatus()
         adminStatus = adminStatusMap.get(statusCode,
                 'Unknown (%s)' % statusCode)
 
